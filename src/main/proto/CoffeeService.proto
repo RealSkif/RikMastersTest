@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.example.RikMastersTest.grpc;
+
+message RoastingInfo {
+  string originCountry = 1;
+  double quantity = 2;
+  string teamNumber = 3;
+}
+
+service GrainRoastingService {
+  rpc RoastGrain(RoastingInfo) returns (GrainRoastingResponse);
+}
+
+message GrainRoastingResponse {
+  double lossPercentage = 1;
+}
