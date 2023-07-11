@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/stocks")
+@RequestMapping("/grainStocks")
 public class GrainStockController {
     private final GrainStockService grainStockService;
 
@@ -22,11 +22,11 @@ public class GrainStockController {
         this.grainStockService = grainStockService;
     }
 
-    @GetMapping
+    @GetMapping(params = "grainType")
     public List<GrainStock> getStocksByGrainType(@RequestParam(required = false) String grainType) {
         return grainStockService.findByGrainType(grainType);
     }
-    @GetMapping
+    @GetMapping(params = "originCountry")
     public List<GrainStock> getStocksByOriginCountry(@RequestParam(required = false) String originCountry) {
         return grainStockService.findByOriginCountry(originCountry);
     }
