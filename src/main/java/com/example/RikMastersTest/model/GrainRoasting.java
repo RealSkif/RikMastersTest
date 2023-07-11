@@ -24,8 +24,5 @@ public class GrainRoasting {
     private double lossPercentage;
     @Column(name = "brigadeNumber")
     private UUID brigadeNumber;
-//    @ManyToOne
-//    @JoinColumn(name = "brigade_id", referencedColumnName = "id")
-//    private Brigade owner;
 
 }

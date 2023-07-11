@@ -19,6 +19,7 @@ import java.util.List;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+
 @WebMvcTest(GrainStockController.class)
 
 public class GrainStockControllerTest {
@@ -31,7 +32,6 @@ public class GrainStockControllerTest {
 
     @Test
     public void testGetStocksByGrainType() throws Exception {
-        // Arrange
         String grainType = "Arabica";
         GrainStock stock1 = new GrainStock();
         stock1.setGrainType("Arabica");
@@ -46,6 +46,7 @@ public class GrainStockControllerTest {
 
         verify(grainStockService, times(1)).findByGrainType(grainType);
     }
+
     @Test
     public void testGetStocksByOriginCountry() throws Exception {
         String originCountry = "Brazil";
